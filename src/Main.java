@@ -17,19 +17,21 @@ public class Main {
         player2Hand.add(deckOfCards.dealTopCard());
 
         ArrayList<Card> burn = new ArrayList<>();
-        ArrayList<Card> communityCards = new ArrayList<>();
+        ArrayList<Card> table = new ArrayList<>();
 
         burn.add(deckOfCards.dealTopCard());
-        communityCards.add(deckOfCards.dealTopCard());
-        communityCards.add(deckOfCards.dealTopCard());
-        communityCards.add(deckOfCards.dealTopCard());
+        table.add(deckOfCards.dealTopCard());
+        table.add(deckOfCards.dealTopCard());
+        table.add(deckOfCards.dealTopCard());
         burn.add(deckOfCards.dealTopCard());
-        communityCards.add(deckOfCards.dealTopCard());
+        table.add(deckOfCards.dealTopCard());
         burn.add(deckOfCards.dealTopCard());
-        communityCards.add(deckOfCards.dealTopCard());
+        table.add(deckOfCards.dealTopCard());
 
-        System.out.println(player1.getName() + ": " + player1Hand);
-        System.out.println(player2.getName() + ": " + player2Hand);
-        System.out.println("Community cards: " + communityCards);
+        System.out.println(player1.getName() + ": " + player1.getHand());
+        System.out.println(player2.getName() + ": " + player2.getHand());
+        System.out.println("Community cards: " + table);
+
+        Card.getValidRanks().indexOf("2");
     }
 }

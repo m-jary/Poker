@@ -28,4 +28,8 @@ public class DeckOfCards {
     public void shuffle() {
         Collections.shuffle(deck);
     }
+
+    public int getSize() {
+        return deck.size();
+    }
 }

@@ -15,6 +15,7 @@ public class Card {
 
     public static List<String> getValidRanks() {
         return Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace");
+
     }
 
     public void setRank(String rank) {
