@@ -1,17 +1,17 @@
+package poker;
+
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
-public class DeckOfCards {
+public class Deck {
+
     private final ArrayList<Card> deck;
 
-    public DeckOfCards() {
-        List<String> suits = Card.getValidSuit();
-        List<String> ranks = Card.getValidRanks();
+    public Deck() {
 
         deck = new ArrayList<>();
-        for (String suit : suits) {
-            for (String rank : ranks) {
+        for (Card.Suit suit : Card.Suit.values()){
+            for (Card.Rank rank : Card.Rank.values()) {
                 deck.add(new Card(rank, suit));
             }
         }
