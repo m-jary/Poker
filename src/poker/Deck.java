@@ -8,28 +8,31 @@ public class Deck {
     private final ArrayList<Card> deck;
 
     public Deck() {
+        this.deck = initDeck();
+    }
 
-        deck = new ArrayList<>();
-        for (Card.Suit suit : Card.Suit.values()){
-            for (Card.Rank rank : Card.Rank.values()) {
-                deck.add(new Card(rank, suit));
+    public ArrayList<Card> getDeck() {
+        return deck;
+    }
+
+    private ArrayList<Card> initDeck() {
+        ArrayList<Card> deckOfCards = new ArrayList<>();
+
+        for (Suit suit : Suit.values()) {
+            for (Rank rank : Rank.values()) {
+                deckOfCards.add(new Card(rank, suit));
             }
         }
+
+        Collections.shuffle(deckOfCards);
+        return deckOfCards;
     }
 
-    public Card dealTopCard() {
-        if (!deck.isEmpty()) {
-            return deck.remove(0);
-        } else {
-            return null;
-        }
-    }
-
-    public void shuffle() {
-        Collections.shuffle(deck);
+    public Card dealCard() {
+        return this.deck.isEmpty() ? null : this.deck.removeFirst();
     }
 
     public int getSize() {
-        return deck.size();
+        return this.deck.size();
     }
 }
